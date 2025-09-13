@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Umar Balarabe",
+        "email": "ubaz27@gmail.com",
+        "position_id": 1,
+        "password": "manufa"
+    },
+    {
+        "id": 2,
+        "name": "Yusuf Ahmad",
+        "email": "yahmad@gmail.com",
+        "position_id": 1,
+        "password": "12345678"
+    },
+    {
+        "id": 3,
+        "name": "Dr Isa Ado Abubakar",
+        "email": "iaabubakar.edu@buk.edu.ng",
+        "position_id": 1,
+        "password": "12345678"
+    }
+]

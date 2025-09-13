@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "position": "ICT"
+    },
+    {
+        "id": 2,
+        "position": "Administrator"
+    }
+    ,
+    {
+        "id": 3,
+        "position": "Data Officer"
+    }
+    ,
+    {
+        "id": 4,
+        "position": "MIS"
+    }
+]

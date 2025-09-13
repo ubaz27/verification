@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "paper": "Book Chapter"
+    },
+    {
+        "id": 2,
+        "paper": "Conference"
+
+    },
+
+    {
+        "id": 3,
+        "paper": "Journal"
+
+    },
+    {
+        "id": 4,
+        "paper": "Report"
+    },
+    {
+        "id": 5,
+        "paper": "Seminar"
+
+    },
+    {
+        "id": 6,
+        "paper": "Workshop"
+
+    }
+    ,
+    {
+        "id": 7,
+        "paper": "Professorial Lectures"
+
+    }
+]
+

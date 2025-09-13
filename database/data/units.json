@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "unit": "No Faculty"
+
+
+    },
+    {
+        "id": 2,
+        "unit": "University Base"
+
+
+    },
+    {
+        "id": 3,
+        "unit": "Clinical Sciences"
+    },
+    {
+        "id": 4,
+        "unit": "Computing"
+
+    },
+    {
+        "id": 5,
+        "unit": "Communication"
+
+
+    }
+    ,
+    {
+        "id": 6,
+        "unit": "Basic Management Sciences"
+
+    }
+]

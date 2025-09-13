@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "programme": "BCNG",
+    "department_id": "1",
+    "category_id": "1"
+  },
+  {
+    "id": "2",
+    "programme": "ACNG",
+    "department_id": "1",
+    "category_id": "1"
+  }
+]

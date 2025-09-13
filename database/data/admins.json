@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Umar Balarabe",
+        "email": "ubaz27@gmail.com",
+        "position_id": 1,
+        "password": "manufa"
+    },
+    {
+        "id": 2,
+        "name": "Sabiu  ",
+        "email": "saleko4sab@gmail.com",
+        "position_id": 1,
+        "password": "12345678"
+    },
+    {
+        "id": 3,
+        "name": "Ahmad Tijjani",
+        "email": "aggalad32@gmail.com",
+        "position_id": 1,
+        "password": "12345678"
+    }
+]

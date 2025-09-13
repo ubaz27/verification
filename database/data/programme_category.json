@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "category": "Diploma"
+  },
+  {
+    "id": 2,
+    "category": "Advance Diploma"
+  },
+  {
+    "id": 3,
+    "category": "Degree"
+  },
+  {
+    "id": 4,
+    "category": "Postgraduate Diploma"
+  },
+  {
+    "id": 5,
+    "category": "M.Sc."
+  },
+  {
+    "id": 6,
+    "category": "Professional Masters"
+  },
+  {
+    "id": 7,
+    "category": "M. Phil"
+  },
+  {
+    "id": 8,
+    "category": "PhD."
+  }
+]
