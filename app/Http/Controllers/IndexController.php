@@ -13,20 +13,8 @@ class IndexController extends Controller
     //
     public function showIndex()
     {
-        $events = Event::where('type', 1)
-            ->where('status', 0)
-            ->limit(4)
-            ->latest()
-            ->get();
+       
 
-
-        $new = Event::where('type', 2)
-            ->where('status', 0)
-            ->limit(4)
-            ->latest()
-            ->get();
-        // dd($new);
-
-        return view('index', compact('events', 'new'));
+        return view('index');
     }
 }

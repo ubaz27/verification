@@ -41,12 +41,6 @@ class DashboardController extends Controller
                 // $papers = DB::select("select count(id) as no from staff_records where paper_type_id = 3");
                 $chapters = 0;
 
-                // Scholarship statistics - only total needed for dashboard
-                $total_scholarships = Scholarship::count();
-
-                // Executive statistics
-                $total_executives = Executive::count();
-                $active_executives = Executive::active()->count();
 
                 // FAQ statistics
                 $total_faqs = Faq::count();
@@ -55,11 +49,11 @@ class DashboardController extends Controller
                 // Contact Messages statistics
                 $total_messages = ContactMessage::count();
                 $unread_messages = ContactMessage::unread()->count();
-                $scholarship_messages = ContactMessage::where('source', 'scholarship')->count();
+
                 $contact_messages = ContactMessage::where('source', 'contact')->count();
                 $recent_messages = ContactMessage::latest()->take(5)->get();
 
-                return view('admin.dashboard', compact('alumni_no', 'chapters', 'payment_no', 'unconfirmed', 'total_scholarships', 'total_executives', 'active_executives', 'total_faqs', 'active_faqs', 'total_messages', 'unread_messages', 'scholarship_messages', 'contact_messages', 'recent_messages'));
+                return view('admin.dashboard', compact('alumni_no', 'payment_no', 'unconfirmed', 'total_faqs', 'active_faqs', 'total_messages', 'unread_messages',  'contact_messages', 'recent_messages'));
                 // return view('admin.dashboard', compact('available_plots', 'allocated_plot_no', 'land_no', 'member_no', 'plot_no', 'agent_no'));
             }
         } else {

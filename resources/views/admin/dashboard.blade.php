@@ -54,7 +54,7 @@
                                     {{-- @foreach ($conferences as $item)
                                         <h3 class="mb-2">{{ $item->no }}</h3>
                                     @endforeach --}}
-                                    <h3 class="mb-2">{{ $chapters }}</h3>
+                                    <h3 class="mb-2">{{ 0 }}</h3>
                                     {{-- {{ $applicants }} --}}
                                     <div class="d-flex align-items-baseline">
                                         <p class="text-danger">
@@ -141,7 +141,7 @@
                                     <h3 class="mb-2">{{ $total_scholarships ?? 0 }}</h3>
                                     <div class="d-flex align-items-baseline">
                                         <p class="text-primary">
-                                            <a href="{{ route('admin.scholarships.index') }}" class="text-decoration-none small">Manage Scholarships</a>
+                                            <a href="#" class="text-decoration-none small">Manage Scholarships</a>
                                         </p>
                                     </div>
                                 </div>
@@ -163,7 +163,7 @@
                                     <h3 class="mb-2">{{ $total_executives ?? 0 }}</h3>
                                     <div class="d-flex align-items-baseline">
                                         <p class="text-success">
-                                            <a href="{{ route('admin.executives.index') }}" class="text-decoration-none small">Manage Executives</a>
+                                            <a href="" class="text-decoration-none small">Manage Executives</a>
                                         </p>
                                         <p class="text-muted ms-2">
                                             <small>{{ $active_executives ?? 0 }} active</small>
@@ -188,7 +188,8 @@
                                     <h3 class="mb-2">{{ $total_faqs ?? 0 }}</h3>
                                     <div class="d-flex align-items-baseline">
                                         <p class="text-info">
-                                            <a href="{{ route('admin.faqs.index') }}" class="text-decoration-none small">Manage FAQs</a>
+                                            <a href="{{ route('admin.faqs.index') }}"
+                                                class="text-decoration-none small">Manage FAQs</a>
                                         </p>
                                         <p class="text-muted ms-2">
                                             <small>{{ $active_faqs ?? 0 }} active</small>
@@ -212,7 +213,8 @@
                                     <h3 class="mb-2">{{ $total_messages ?? 0 }}</h3>
                                     <div class="d-flex align-items-baseline">
                                         <p class="text-primary">
-                                            <a href="{{ route('admin.messages.index') }}" class="text-decoration-none small">Manage Messages</a>
+                                            <a href="{{ route('admin.messages.index') }}"
+                                                class="text-decoration-none small">Manage Messages</a>
                                         </p>
                                     </div>
                                 </div>
