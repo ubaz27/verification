@@ -56,7 +56,7 @@
 
             </li> --}}
             <li class="nav-item {{ active_class(['/']) }}">
-                <a href="{{ url('/member/change-password') }}" class="nav-link">
+                <a href="{{ url('/verification/change-password') }}" class="nav-link">
                     <i class="link-icon" data-lucide="key"></i>
                     <span class="link-title">Change Password</span>
                 </a>
@@ -84,25 +84,12 @@
                 </a>
             </li> --}}
 
-            <li class="nav-item nav-category">Events/News</li>
-            <li class="nav-item {{ active_class(['apps/calendar']) }}">
-                <a href="{{ url('/member/events') }}" class="nav-link">
-                    <i class="link-icon" data-lucide="calendar"></i>
-                    <span class="link-title">Events</span>
-                </a>
-            </li>
-            <li class="nav-item {{ active_class(['apps/calendar']) }}">
-                <a href="{{ url('/member/news') }}" class="nav-link">
-                    <i class="link-icon" data-lucide="megaphone"></i>
-                    <span class="link-title">News</span>
-                </a>
-            </li>
 
 
 
             <li class="nav-item nav-category">Logout</li>
             <li class="nav-item">
-                <a href="{{ route('member.logout') }}" class="nav-link">
+                <a href="{{ route('verification.logout') }}" class="nav-link">
                     <i class="link-icon" data-lucide="log-out"></i>
                     <span class="link-title">Logout</span>
                 </a>

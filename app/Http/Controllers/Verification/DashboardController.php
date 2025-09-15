@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('auth:verification');
+    }
     public function showDashboard()
     {
         $message = "";
