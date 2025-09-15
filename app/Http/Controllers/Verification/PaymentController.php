@@ -24,17 +24,34 @@ class PaymentController extends Controller
                 ->join('applications', 'applications.id', 'payments.application_id')
                 ->join('programmes', 'students.programme_id', 'programmes.id')
                 ->where('payments.application_id', $id)
-                ->get(['payments.id', 'students.fullname', 'programmes.programme', 'students.month', 'students.certificate_no']);
+                ->get(['payments.id', 'payments.payment_status_code', 'students.fullname', 'programmes.programme', 'students.month', 'students.certificate_no']);
             return DataTables::of($data)
                 ->addIndexColumn()
 
+                ->addColumn('status', function ($row) {
+                    if ($row->payment_status_code == 1) {
+                        $payment = 'Yes';
+                    } else {
+                        $payment = 'No';
+                    }
+                    return $payment;
+                })
+                ->addColumn('print', function ($row) {
+                    if ($row->payment_status_code == 1) {
+                        $btn = '<a href="' . Url::signedRoute("verification.downloadCertificate", ['id' => $row->id]) . '"  class="btn btn-primary btn-icon btn-sm" data-toggle="tooltip" data-placement="top" title="Download"><i data-lucide="download"></i></a>';
+                    } else {
+                        $btn = '<a href="' . Url::signedRoute("verification.login", ['id' => $row->id]) . '"  class="btn btn-danger btn-icon btn-sm" data-toggle="tooltip" data-placement="top" title="Pay"><i data-lucide="currency"></i></a>';
+                    }
+                    return $btn;
+                })
                 ->addColumn('action', function ($row) {
+
                     $btn = '<a href="' . Url::signedRoute("verification.login", ['id' => $row->id]) . '"  class="btn btn-primary btn-icon btn-sm" data-toggle="tooltip" data-placement="top" title="View/Edit"><i data-lucide="pencil"></i></a>';
                     // $btn = '<a href="' . Url::signedRoute("admin.acceptStudent", ['id' => $row->id]) . '" class="btn btn-danger btn-icon" data-toggle="tooltip" data-placement="top" title="Accept"><i data-lucide="edit"></i></a>';
                     return $btn;
                 })
 
-                ->rawColumns(['action'])
+                ->rawColumns(['print', 'payment', 'action'])
                 ->make(true);
         }
     }
@@ -76,7 +93,7 @@ class PaymentController extends Controller
                     'amount_payable' => 10000,
                     'student_id' => $student_id,
                     'rrr' => $ref,
-                    'payment_status_code' => 25,
+                    'payment_status_code' => 1,
                     'payment_commission' => 33,
 
                 ]);

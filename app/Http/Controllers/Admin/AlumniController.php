@@ -70,7 +70,7 @@ class AlumniController extends Controller
                         'organization' => $organisation,
                         'programme_id' => $course,
                         'year' => $year,
-                        'month' => $month,
+                        'month' => $year,
                         'location' => $location,
                         'file_no' => $file_no,
                         'certificate_no' => $certificate_no,

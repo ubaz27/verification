@@ -34,9 +34,10 @@ Route::post('/search-certificate', [VerifyController::class, 'searchCertificateN
 Route::post('/display-certificate', [VerifyController::class, 'displayCertificateNo'])->name('displayCertificateNo');
 
 
-//Invoie
+//Invoice
 Route::post('/get-invoicelist', [PaymentController::class, 'getInvoiceList'])->name('getInvoiceList');
 Route::post('/generate-invoice', [PaymentController::class, 'generateInvoice'])->name('generateInvoice');
+Route::get('download-certificate/{id}', [VerifyController::class, 'downloadCertificate'])->name('downloadCertificate');
 
 // //change password
 // Route::get('/change-password', [LoginController::class, 'showChangePassword'])->name('showChangePassword');

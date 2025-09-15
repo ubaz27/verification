@@ -89,6 +89,10 @@
                                     <th>Programme</th>
                                     <th>Certificate</th>
                                     <th>Date</th>
+                                    <th>Payment</th>
+
+                                    <th>Download</th>
+
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -171,10 +175,16 @@
                         {
                             data: 'certificate_no'
                         },
-
                         {
                             data: 'month'
                         },
+                        {
+                            data: 'status'
+                        },
+                        {
+                            data: 'print'
+                        },
+
                         {
                             data: 'action'
                         },

@@ -45,17 +45,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="col-md-4 ">
-                            <label for="name" class="form-label">Category Name</label> (<span
-                                class="text-danger">required</span>)
 
-                            <select name="category_id" id="category_id" class="form-control">
-                                <option value="Select">--Select Category--</option>
-                                @foreach ($categories as $item)
-                                    <option value="{{ $item->id }}">{{ $item->category }}</option>
-                                @endforeach
-                            </select>
-                        </div>
 
                     </div>
 
@@ -95,7 +85,6 @@
                                     <th>S/N</th>
                                     <th>Programmes</th>
                                     <th>Departments</th>
-                                    <th>Categories</th>
                                     <th>Edit</th>
                                 </tr>
                             </thead>
@@ -142,10 +131,6 @@
                     {
                         data: 'department',
                         name: 'department'
-                    },
-                    {
-                        data: 'category',
-                        name: 'category'
                     },
                     {
                         data: 'action',
