@@ -3,9 +3,11 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
+
         .nav-link {
             position: relative;
         }
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -16,33 +18,42 @@
             background-color: #00a0b0;
             transition: width 0.3s ease;
         }
+
         .nav-link:hover::after {
             width: 100%;
         }
+
         .nav-link.active::after {
             width: 100%;
         }
+
         .faq-item {
             transition: all 0.3s ease;
         }
+
         .faq-item:hover {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
+
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
         }
+
         .faq-answer.active {
             max-height: 500px;
         }
+
         .category-filter {
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
         .category-filter:hover {
             background-color: #f3f4f6;
         }
+
         .category-filter.active {
             background-color: #00a0b0;
             color: white;
@@ -58,7 +69,9 @@
     </div>
     <div class="container mx-auto px-4 z-10 text-center">
         <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Frequently Asked Questions</h1>
-        <p class="text-xl md:text-2xl text-white/90 font-light">Find answers to common questions about the BUK Alumni Association</p>
+        <p class="text-xl md:text-2xl text-white/90 font-light">Find answers to common questions about the NITT
+            Vefirication System
+            Association</p>
     </div>
 </section>
 
@@ -68,7 +81,7 @@
         <div class="max-w-2xl mx-auto">
             <div class="relative">
                 <input type="text" id="faqSearch" placeholder="Search FAQs..."
-                       class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                    class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
                 <div class="absolute left-4 top-1/2 transform -translate-y-1/2">
                     <i class="ri-search-line text-gray-400"></i>
                 </div>
@@ -88,12 +101,12 @@
                         <h3 class="text-lg font-semibold text-gray-900 mb-4">Categories</h3>
                         <div class="space-y-2">
                             <div class="category-filter px-3 py-2 rounded {{ !isset($selectedCategory) ? 'active' : '' }}"
-                                 data-category="all">
+                                data-category="all">
                                 <i class="ri-list-check-2 mr-2"></i>All Questions
                             </div>
-                            @foreach($categories as $category)
+                            @foreach ($categories as $category)
                                 <div class="category-filter px-3 py-2 rounded {{ isset($selectedCategory) && $selectedCategory === $category ? 'active' : '' }}"
-                                     data-category="{{ $category }}">
+                                    data-category="{{ $category }}">
                                     <i class="ri-question-line mr-2"></i>{{ $category }}
                                 </div>
                             @endforeach
@@ -104,23 +117,24 @@
                 <!-- FAQ Items -->
                 <div class="lg:w-3/4">
                     <div class="space-y-4" id="faqContainer">
-                        @foreach($faqs as $faq)
+                        @foreach ($faqs as $faq)
                             <div class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden"
-                                 data-category="{{ $faq->category }}"
-                                 data-question="{{ strtolower($faq->question) }}"
-                                 data-answer="{{ strtolower($faq->answer) }}">
+                                data-category="{{ $faq->category }}" data-question="{{ strtolower($faq->question) }}"
+                                data-answer="{{ strtolower($faq->answer) }}">
                                 <div class="faq-question px-6 py-4 cursor-pointer flex justify-between items-center hover:bg-gray-50"
-                                     onclick="toggleFaq({{ $faq->id }})">
+                                    onclick="toggleFaq({{ $faq->id }})">
                                     <div class="flex-1">
                                         <div class="flex items-center mb-2">
-                                            <span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
+                                            <span
+                                                class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
                                                 {{ $faq->category }}
                                             </span>
                                         </div>
                                         <h3 class="text-lg font-medium text-gray-900 pr-4">{{ $faq->question }}</h3>
                                     </div>
                                     <div class="flex-shrink-0">
-                                        <i class="ri-add-line text-primary text-xl transition-transform duration-300" id="icon-{{ $faq->id }}"></i>
+                                        <i class="ri-add-line text-primary text-xl transition-transform duration-300"
+                                            id="icon-{{ $faq->id }}"></i>
                                     </div>
                                 </div>
                                 <div class="faq-answer" id="answer-{{ $faq->id }}">
@@ -162,7 +176,7 @@
                         <i class="ri-mail-line text-primary text-xl"></i>
                     </div>
                     <h3 class="font-semibold text-gray-900 mb-2">Email Us</h3>
-                    <p class="text-gray-600">info@bukalumni.org</p>
+                    <p class="text-gray-600">info@nitt.gov.ng</p>
                 </div>
 
                 <div class="bg-white p-6 rounded-lg shadow-md">
@@ -170,7 +184,7 @@
                         <i class="ri-phone-line text-primary text-xl"></i>
                     </div>
                     <h3 class="font-semibold text-gray-900 mb-2">Call Us</h3>
-                    <p class="text-gray-600">+234 803 123 4567</p>
+                    <p class="text-gray-600">+234-803-058-2989</p>
                 </div>
 
                 <div class="bg-white p-6 rounded-lg shadow-md">
@@ -178,11 +192,12 @@
                         <i class="ri-map-pin-line text-primary text-xl"></i>
                     </div>
                     <h3 class="font-semibold text-gray-900 mb-2">Visit Us</h3>
-                    <p class="text-gray-600">Alumni Center, BUK Campus</p>
+                    <p class="text-gray-600">Basawa Road, Zaria, Kaduna State Nigeria</p>
                 </div>
             </div>
 
-            <a href="{{ url('/contact') }}" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300">
+            <a href="{{ url('/contact') }}"
+                class="inline-block bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300">
                 Contact Us
             </a>
         </div>
@@ -295,4 +310,5 @@
 </script>
 
 </body>
+
 </html>
