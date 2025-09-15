@@ -132,6 +132,8 @@
                     <a href="{{ url('/verification/login') }}"
                         class="text-gray-800 font-medium hover:text-primary transition py-2 border-b border-gray-100">Login</a>
 
+                    <a href=""
+                        class="nav-link text-gray-800 font-medium hover:text-primary transition">Charges</a>
 
                     <a href="{{ url('/about') }}"
                         class="nav-link text-gray-800 font-medium hover:text-primary transition">About Us</a>
@@ -159,6 +161,9 @@
 
                     <a href="{{ url('/verification/login') }}"
                         class="text-gray-800 font-medium hover:text-primary transition py-2 border-b border-gray-100">Login</a>
+                    <a href=""
+                        class="nav-link text-gray-800 font-medium hover:text-primary transition">Charges</a>
+
                     <a href="{{ url('/about') }}"
                         class="text-gray-800 font-medium hover:text-primary transition py-2 border-b border-gray-100">About
                         Us</a>

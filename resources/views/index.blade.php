@@ -25,7 +25,7 @@
     <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center gap-12">
             <div class="md:w-2/5">
-                <img src="{{ asset('img/alumni-convocation.jpg') }}" alt="BUK Alumni Convocation"
+                <img src="{{ asset('img/dg.jpeg') }}" alt="BUK Alumni Convocation"
                     class="rounded-lg shadow-lg w-full h-auto object-cover">
             </div>
             <div class="md:w-3/5">

@@ -154,8 +154,7 @@
 
                 <a href="{{ url('/verification/login') }}"
                     class="nav-link text-gray-800 font-medium hover:text-primary transition">Login</a>
-                <a href="{{ url('/chapters') }}"
-                    class="nav-link text-gray-800 font-medium hover:text-primary transition">Charges</a>
+                <a href="" class="nav-link text-gray-800 font-medium hover:text-primary transition">Charges</a>
 
                 <a href="{{ url('/about') }}"
                     class="nav-link text-gray-800 font-medium hover:text-primary transition">About</a>
