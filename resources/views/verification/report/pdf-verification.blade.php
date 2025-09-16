@@ -75,48 +75,67 @@
     <div class="statement-header"><img src="{{ asset('img/my-logo-3.jpg') }}" height="70px" /></div>
     <div class="statement-header"></div>
     <div class="statement-header" style="color:green;">
-        Nigerian Institute of Transport Techonology, Zaria
-        <br> Verification Certificate
+        <h2> Nigerian Institute of Transport Technology (NITT)</h2>
     </div>
+
     <div class="statement-header">
-        <h3>
 
-            Confirmation of Certificate
+        <h2>
 
-        </h3>
+            CNG – Certificate Verification Slip
 
+        </h2>
     </div>
 
     <div style="font-style: italic;">
-
+        <h3>Certificate Holder Information</h3>
         @foreach ($data as $item)
-            {{ $item->fullname }}. <br>
-            {{ $item->programme }} <br>
-            {{ $item->certificate_no }} <br>
-            {{ $item->file_no }} <br>
-            {{ $item->organization }} <br>
-            {{ $item->location }} <br>
-            {{ $item->month }} <br>
-            @if ($item->isBlocked == 1)
-                <span style="color:red;">Certificate Cancelled</span>
-            @endif
+            <b>Name: </b> {{ $item->fullname }}. <br>
+            <b>Organisation: </b> {{ $item->organization }} <br>
+            <b>Course: </b> {{ $item->programme }} <br>
+            <b>Year / Month: </b> {{ $item->year }} <br>
+            <b>Location: </b> {{ $item->location }} <br>
+            <b>File No: </b>{{ $item->file_no }} <br>
+            <b>Certificate Serial No: </b> {{ $item->certificate_no }} <br>
+            <b>Registration Number: </b> {{ $item->regno }} <br>
         @endforeach
 
-
-    </div>
-    <div>
-        <p>
-        <h4 style="text-align: center;color:goldenrod"> BUKAA PERSONALISED PAYMENT FORM
-        </h4>
-
         <hr>
+    </div>
+    <div style="text-align:justify;">
+        <p>
+            <b>Note: </b> <br>
 
+            This certificate is valid until <b> <i> three (3) years</i></b> from the date of issue.
+            To maintain active certification, the technician <b> <i> must attend a 2-day refresher program</i></b> at
+            any NITT-approved
+            training center for <b> <i>revalidation</i></b>.
 
 
 
         </p>
+        <div style="text-align:center;">
+            <p>
+                <b> Verification Status <br> </b>
+                @if ($item->isBlocked == 1)
+                    <span style="color:red;">Certificate Cancelled</span>
+                @else
+                    <span style="color:green;"> Verified and Valid</span>
+                @endif
 
 
+
+            </p>
+        </div>
+
+
+        <hr>
+        <p>
+            <b>Authorized By:</b> <br>
+            <b> Director General/Chief Executive (DG/CE)</b> <br>
+            <i> Nigerian Institute of Transport Technology (NITT)</i>
+
+        </p>
 
 
 

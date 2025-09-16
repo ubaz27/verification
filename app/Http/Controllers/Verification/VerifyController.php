@@ -20,8 +20,8 @@ class VerifyController extends Controller
     }
     public function showVerify()
     {
-        // $id = Auth::guard('verification')->user()->id;
-        // $data = Payment::join('students', 'payments.student_id', 'students.id')
+        $id = Auth::guard('verification')->user()->id;
+        // $data = Student::leftjoin('payments', 'payments.student_id', 'students.id')
         //     ->join('applications', 'applications.id', 'payments.application_id')
         //     ->join('programmes', 'students.programme_id', 'programmes.id')
         //     ->where('payments.application_id', $id)
@@ -55,7 +55,7 @@ class VerifyController extends Controller
         $data = Payment::join('students', 'students.id', 'payments.student_id')
             ->join('programmes', 'students.programme_id', 'programmes.id')
             ->where('payments.id', $payment_id)
-            ->get(['students.fullname', 'programmes.programme', 'students.organization', 'students.month', 'students.location', 'students.file_no', 'students.certificate_no', 'students.isBlocked']);
+            ->get(['students.regno', 'students.fullname', 'programmes.programme', 'students.organization', 'students.year', 'students.location', 'students.file_no', 'students.certificate_no', 'students.isBlocked']);
 
         $pdf = PDF::loadView('verification.report.pdf-verification', compact('data'), [], [
             'title' => 'NITT',
@@ -69,10 +69,10 @@ class VerifyController extends Controller
             'margin_header' => 5,
         ]);
 
-        if ($request->submit == 'btnDownload') {
-            return $pdf->download($filename);
-        }
-        return $pdf->download($filename);
-        // return $pdf->stream($filename);
+        // if ($request->submit == 'btnDownload') {
+        //     return $pdf->download($filename);
+        // }
+        // return $pdf->download($filename);
+        return $pdf->stream($filename);
     }
 }

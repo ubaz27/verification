@@ -176,7 +176,7 @@
                             data: 'certificate_no'
                         },
                         {
-                            data: 'month'
+                            data: 'year'
                         },
                         {
                             data: 'status'

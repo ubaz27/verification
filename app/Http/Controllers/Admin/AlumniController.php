@@ -56,6 +56,8 @@ class AlumniController extends Controller
                 $location =  $spreadsheet->getActiveSheet()->getCell('D' . $i)->getFormattedValue();
                 $file_no =  $spreadsheet->getActiveSheet()->getCell('E' . $i)->getFormattedValue();
                 $certificate_no =  $spreadsheet->getActiveSheet()->getCell('F' . $i)->getFormattedValue();
+                $regno =  $spreadsheet->getActiveSheet()->getCell('G' . $i)->getFormattedValue();
+
                 $course =  $request->programme_id;
                 $year =  $request->year;
 
@@ -74,6 +76,7 @@ class AlumniController extends Controller
                         'location' => $location,
                         'file_no' => $file_no,
                         'certificate_no' => $certificate_no,
+                        'regno' => $regno,
 
                     ]);
                     $records++;
@@ -119,6 +122,7 @@ class AlumniController extends Controller
             'location' => 'required',
             'file_no' => 'required',
             'certificate_no' => 'required',
+            'regno' => 'regno',
         ]);
         // dd($request->yog);
         $student = Student::where('certificate_no', $request->certificate_no)->first();
@@ -131,6 +135,7 @@ class AlumniController extends Controller
                 'location' => $request->location,
                 'file_no' => $request->file_no,
                 'certificate_no' => $request->certificate_no,
+                'regno' => $request->regno,
 
             ]);
             return back()->with('mssg', ['type' => 'success', 'icon' => 'check', 'message' => 'Upload of ' . $request->certificate_no . ' was successful.']);

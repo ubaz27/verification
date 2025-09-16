@@ -23,6 +23,7 @@ class CreateStudentsTable extends Migration
             $table->string('location')->nullable();
             $table->string('file_no')->unique();
             $table->string('certificate_no')->unique();
+            $table->string('regno')->unique()->nullable();
             $table->boolean('isBlocked')->default(false);
             $table->softDeletes();
             $table->timestamps();

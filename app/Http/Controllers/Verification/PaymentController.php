@@ -24,7 +24,7 @@ class PaymentController extends Controller
                 ->join('applications', 'applications.id', 'payments.application_id')
                 ->join('programmes', 'students.programme_id', 'programmes.id')
                 ->where('payments.application_id', $id)
-                ->get(['payments.id', 'payments.payment_status_code', 'students.fullname', 'programmes.programme', 'students.month', 'students.certificate_no']);
+                ->get(['payments.id', 'payments.payment_status_code', 'students.fullname', 'programmes.programme', 'students.year', 'students.certificate_no']);
             return DataTables::of($data)
                 ->addIndexColumn()
 
