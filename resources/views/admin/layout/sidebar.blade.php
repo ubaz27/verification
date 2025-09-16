@@ -92,13 +92,13 @@
                 </a>
             </li>
 
-            <li class="nav-item nav-category">Applicants Data</li>
-            <li class="nav-item {{ active_class(['apps/chat']) }}">
+            {{-- <li class="nav-item nav-category">Applicants Data</li> --}}
+            {{-- <li class="nav-item {{ active_class(['apps/chat']) }}">
                 <a href="{{ url('/admin/show-applicants') }}" class="nav-link">
                     <i class="link-icon" data-lucide="user-plus"></i>
                     <span class="link-title">List of Applicants</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item nav-category">Report</li>
             <li class="nav-item {{ active_class(['apps/chat']) }}">
                 <a href="{{ url('/admin/show-IDCard') }}" class="nav-link">
@@ -124,18 +124,18 @@
                 </a>
             </li>
             <li class="nav-item {{ active_class(['apps/calendar']) }}">
-                <a href="{{ url('admin/paper-entry') }}" class="nav-link">
+                <a href="{{ url('admin/charges') }}" class="nav-link">
                     <i class="link-icon" data-lucide="file-plus"></i>
                     <span class="link-title">Fees</span>
                 </a>
             </li>
 
-            <li class="nav-item {{ active_class(['apps/calendar']) }}">
+            {{-- <li class="nav-item {{ active_class(['apps/calendar']) }}">
                 <a href="{{ url('admin/paper-list') }}" class="nav-link">
                     <i class="link-icon" data-lucide="file-plus"></i>
                     <span class="link-title">Category</span>
                 </a>
-            </li>
+            </li> --}}
 
             {{-- <li class="nav-item nav-category">Alumni</li>
 

@@ -56,6 +56,11 @@
                             <input id="yog" class="form-control" name="certificate_no"
                                 value="{{ old('certificate_no') }}" type="text" required>
                         </div>
+                        <div class="col-md-3 ">
+                            <label for="name" class="form-label">Registration No</label>
+                            <input id="text" class="form-control" name="regno" value="{{ old('regno') }}"
+                                type="text" required>
+                        </div>
 
 
                         <div class="col-md-3">

@@ -44,10 +44,14 @@ return array(
     'App\\Http\\Controllers\\Member\\SocialController' => $baseDir . '/app/Http/Controllers/Member/SocialController.php',
     'App\\Http\\Controllers\\Verification\\DashboardController' => $baseDir . '/app/Http/Controllers/Verification/DashboardController.php',
     'App\\Http\\Controllers\\Verification\\LoginController' => $baseDir . '/app/Http/Controllers/Verification/LoginController.php',
+    'App\\Http\\Controllers\\Verification\\PaymentController' => $baseDir . '/app/Http/Controllers/Verification/PaymentController.php',
     'App\\Http\\Controllers\\Verification\\ProfileController' => $baseDir . '/app/Http/Controllers/Verification/ProfileController.php',
     'App\\Http\\Controllers\\Verification\\RegisterController' => $baseDir . '/app/Http/Controllers/Verification/RegisterController.php',
     'App\\Http\\Controllers\\Verification\\VerifyController' => $baseDir . '/app/Http/Controllers/Verification/VerifyController.php',
+<<<<<<< HEAD
     'App\\Http\\Controllers\\VerifyController' => $baseDir . '/app/Http/Controllers/VerifyController.php',
+=======
+>>>>>>> 22e3f354ce39951ccbf653e20b245d1bfbffc206
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -62,6 +66,7 @@ return array(
     'App\\Models\\ChapterAdmin' => $baseDir . '/app/Models/ChapterAdmin.php',
     'App\\Models\\ChapterEvent' => $baseDir . '/app/Models/ChapterEvent.php',
     'App\\Models\\ChapterType' => $baseDir . '/app/Models/ChapterType.php',
+    'App\\Models\\Charge' => $baseDir . '/app/Models/Charge.php',
     'App\\Models\\Check' => $baseDir . '/app/Models/Check.php',
     'App\\Models\\Contact' => $baseDir . '/app/Models/Contact.php',
     'App\\Models\\ContactMessage' => $baseDir . '/app/Models/ContactMessage.php',
@@ -79,6 +84,7 @@ return array(
     'App\\Models\\Mission' => $baseDir . '/app/Models/Mission.php',
     'App\\Models\\News' => $baseDir . '/app/Models/News.php',
     'App\\Models\\Organisation' => $baseDir . '/app/Models/Organisation.php',
+    'App\\Models\\Payment' => $baseDir . '/app/Models/Payment.php',
     'App\\Models\\Position' => $baseDir . '/app/Models/Position.php',
     'App\\Models\\Professional' => $baseDir . '/app/Models/Professional.php',
     'App\\Models\\Programme' => $baseDir . '/app/Models/Programme.php',

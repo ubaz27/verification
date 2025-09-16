@@ -2,6 +2,8 @@
 
 use App\Models\Land;
 use App\Models\Member;
+use Carbon\Carbon;
+
 
 function active_class($path, $active = 'active')
 {
@@ -46,5 +48,18 @@ if (!function_exists('get_member_id_email')) {
     {
         $member_columns = Member::where('email', $email)->first();
         return ($member_columns->$column ?? '');
+    }
+}
+
+if (!function_exists('generateTicketID')) {
+
+    function generateTicketID()
+    {
+        $refno = rand(100, 9999);
+        $today = Now()->format('Y-m-d');
+        $year =  Carbon::createFromFormat('Y-m-d', $today)->format('y');
+        $month =  Carbon::createFromFormat('Y-m-d', $today)->format('m');
+        $ref =  $month . $year . $refno;
+        return $ref ?? '';
     }
 }

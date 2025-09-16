@@ -47,17 +47,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-md-12 ">
-                                    <label for="name" class="form-label">Category Name</label> (<span
-                                        class="text-danger">required</span>)
 
-                                    <select name="category_id" id="category_id" class="form-control">
-                                        <option value="Select">--Select Category--</option>
-                                        @foreach ($categories as $item)
-                                            <option value="{{ $item->id }}">{{ $item->category }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
                             </div>
                         </div>
 
@@ -100,7 +90,7 @@
                                     <th>S/N</th>
                                     <th>Programmes</th>
                                     <th>Departments</th>
-                                    <th>Categories</th>
+
                                     <th>Edit</th>
                                 </tr>
                             </thead>
@@ -124,8 +114,7 @@
 
     <link href="{{ asset('assets/plugins/easy-autocomplete/easy-autocomplete.themes.min.css') }}" rel="stylesheet"
         type="text/css">
-    <link href="{{ asset('assets/plugins/easy-autocomplete/easy-autocomplete.min.css') }}" rel="stylesheet"
-        type="text/css">
+    <link href="{{ asset('assets/plugins/easy-autocomplete/easy-autocomplete.min.css') }}" rel="stylesheet" type="text/css">
     <script src="{{ asset('assets/plugins/bootstrap-inputmask/jquery.inputmask.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/easy-autocomplete/jquery.easy-autocomplete.min.js') }}"></script>
     @include('includes/datatable-scripts')
@@ -159,10 +148,7 @@
                             data: 'department',
                             name: 'department'
                         },
-                        {
-                            data: 'category',
-                            name: 'category'
-                        },
+
                         {
                             data: 'action',
                             name: 'action',

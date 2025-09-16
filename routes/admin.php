@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\JobsController;
 use App\Http\Controllers\Admin\ReportController;
+use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\ScholarshipController;
 
@@ -114,6 +115,12 @@ Route::get('programme-edit{id}', [UnitController::class, 'getProgrammeEdit'])->n
 Route::get('/show-batch-programmes', [UnitController::class, 'showBatchProgrammes'])->name('showBatchProgrammes');
 Route::post('batch-programme/save', [UnitController::class, 'saveBatchProgramme'])->name('saveBatchProgramme');
 
+
+// settings
+Route::get('charges', [SettingsController::class, 'showCharges'])->name('showCharges');
+Route::post('charges-save', [SettingsController::class, 'saveCharges'])->name('saveCharges');
+// Route::post('batch-list', [AlumniController::class, 'getBatchList'])->name('getBatchList');
+
 // //Applicant
 // Route::get('/show-applicants', [ApplicantController::class, 'showApplicantList'])->name('showApplicantList');
 // Route::get('/get-applicants', [ApplicantController::class, 'getApplicantsList'])->name('getApplicantsList');
@@ -166,11 +173,7 @@ Route::post('batch-programme/save', [UnitController::class, 'saveBatchProgramme'
 // Route::post('/chapter-admin-edit', [ChapterController::class, 'editAdmin'])->name('editAdmin');
 // Route::post('/chapter-save-admin-edit', [ChapterController::class, 'saveEditAdmin'])->name('saveEditAdmin');
 
-// // settings
-// Route::get('batch-entry', [AlumniController::class, 'showBatchEntry'])->name('showBatchEntry');
-// Route::post('batch-save', [AlumniController::class, 'saveBatchEntry'])->name('saveBatchEntry');
-// Route::post('batch-list', [AlumniController::class, 'getBatchList'])->name('getBatchList');
-
+//
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 // Route::get('/b', function () {
 //     return view('admin.b');

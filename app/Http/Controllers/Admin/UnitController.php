@@ -167,13 +167,13 @@ class UnitController extends Controller
         $request->validate([
             'programme' => 'required',
             'department_id' => 'required',
-            'category_id' => 'required',
+
         ]);
 
         Programme::Create([
             'programme' => $request->programme,
             'department_id' => $request->department_id,
-            'category_id' => $request->category_id,
+
         ]);
         // return back()->with('mssg', ['type' => 'success', 'icon' => 'check', 'message' => 'Faculty ' . $request->faculty . ' Info. Inserted']);
 
@@ -186,7 +186,7 @@ class UnitController extends Controller
         $request->validate([
             'programmes' => 'required',
             'department_id' => 'required',
-            'category_id' => 'required',
+
         ]);
 
         $programmesinfo = array_filter(explode("\n", trim($request->programmes)));
@@ -197,7 +197,7 @@ class UnitController extends Controller
                 Programme::Create([
                     'programme' => $info,
                     'department_id' => $request->department_id,
-                    'category_id' => $request->category_id,
+
                 ]);
                 $i++;
             }
@@ -218,8 +218,7 @@ class UnitController extends Controller
 
         if ($request->ajax()) {
             $data = Programme::join('departments', 'departments.id', 'programmes.department_id')
-                ->join('programme_categories', 'programme_categories.id', 'programmes.category_id')
-                ->get(['programmes.id', 'programmes.programme', 'departments.department', 'programme_categories.category']);
+                ->get(['programmes.id', 'programmes.programme', 'departments.department']);
             // dd($data);
 
             return Datatables::of($data)

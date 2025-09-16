@@ -631,10 +631,14 @@ class ComposerStaticInit77d370d781046780fa08f8c20e1f0742
         'App\\Http\\Controllers\\Member\\SocialController' => __DIR__ . '/../..' . '/app/Http/Controllers/Member/SocialController.php',
         'App\\Http\\Controllers\\Verification\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Verification/DashboardController.php',
         'App\\Http\\Controllers\\Verification\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Verification/LoginController.php',
+        'App\\Http\\Controllers\\Verification\\PaymentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Verification/PaymentController.php',
         'App\\Http\\Controllers\\Verification\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/Verification/ProfileController.php',
         'App\\Http\\Controllers\\Verification\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Verification/RegisterController.php',
         'App\\Http\\Controllers\\Verification\\VerifyController' => __DIR__ . '/../..' . '/app/Http/Controllers/Verification/VerifyController.php',
+<<<<<<< HEAD
         'App\\Http\\Controllers\\VerifyController' => __DIR__ . '/../..' . '/app/Http/Controllers/VerifyController.php',
+=======
+>>>>>>> 22e3f354ce39951ccbf653e20b245d1bfbffc206
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -649,6 +653,7 @@ class ComposerStaticInit77d370d781046780fa08f8c20e1f0742
         'App\\Models\\ChapterAdmin' => __DIR__ . '/../..' . '/app/Models/ChapterAdmin.php',
         'App\\Models\\ChapterEvent' => __DIR__ . '/../..' . '/app/Models/ChapterEvent.php',
         'App\\Models\\ChapterType' => __DIR__ . '/../..' . '/app/Models/ChapterType.php',
+        'App\\Models\\Charge' => __DIR__ . '/../..' . '/app/Models/Charge.php',
         'App\\Models\\Check' => __DIR__ . '/../..' . '/app/Models/Check.php',
         'App\\Models\\Contact' => __DIR__ . '/../..' . '/app/Models/Contact.php',
         'App\\Models\\ContactMessage' => __DIR__ . '/../..' . '/app/Models/ContactMessage.php',
@@ -666,6 +671,7 @@ class ComposerStaticInit77d370d781046780fa08f8c20e1f0742
         'App\\Models\\Mission' => __DIR__ . '/../..' . '/app/Models/Mission.php',
         'App\\Models\\News' => __DIR__ . '/../..' . '/app/Models/News.php',
         'App\\Models\\Organisation' => __DIR__ . '/../..' . '/app/Models/Organisation.php',
+        'App\\Models\\Payment' => __DIR__ . '/../..' . '/app/Models/Payment.php',
         'App\\Models\\Position' => __DIR__ . '/../..' . '/app/Models/Position.php',
         'App\\Models\\Professional' => __DIR__ . '/../..' . '/app/Models/Professional.php',
         'App\\Models\\Programme' => __DIR__ . '/../..' . '/app/Models/Programme.php',

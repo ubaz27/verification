@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Batch;
+use App\Models\Charge;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Throwable;
@@ -29,73 +30,40 @@ class SettingsController extends Controller
             'active' => 'required|string',
         ]);
     }
-    // public function showBatchEntry()
-    // {
-    //     $data = Batch::all();
-    //     // dd($data);
-    //     return view('admin.settings.batch-entry');
-    // }
 
-
-    public function saveBatchEntry(Request $request)
+    public function _toInt($str)
     {
-        $this->validator($request->all())->validate();
-
-        $batch = DB::Select("update batches set active = 'No' ");
+        return (int)preg_replace("/([^0-9\\.])/i", "", $str);
+    }
+    public function showCharges()
+    {
+        $charges = Charge::first();
+        // dd($charges);
+        return view('admin.settings.charges', compact('charges'));
+    }
+    public function saveCharges(Request $request)
+    {
+        $request->validate([
+            'charges' => ['required'],
+        ]);
 
         try {
-
             DB::beginTransaction();
-            $batch_no = $request->batch_no;
-            $closing_date = $request->closing_date;
-            $active = $request->active;
 
-            Batch::Create([
-                'publication' => $batch_no,
-                'closing_date' => $closing_date,
-                'active' => $active,
-            ]);
+            $amount = $this->_toInt($request->charges);
+            $charges = Charge::where('id', 1)
+                ->update(['charges' => $amount]);
+
             DB::commit();
-            // return back()->with('success', 'Record Added successfully');
-            return back()->with('mssg', ['type' => 'success', 'icon' => 'check', 'message' => 'Record Info Inserted Successfully.']);
+            return back()->with('mssg', ['type' => 'success', 'icon' => 'check', 'message' => 'Charges Updated successfully.']);
         } catch (Throwable $e) {
+
             DB::rollback();
             Log::error($e);
             if (env('APP_ENV') == 'local')
-                return back()->with('mssg', ['type' => 'danger', 'icon' => 'ban', 'message' => $e->getMessage()]);
-            // return back()->with('error', 'Record Not Added');
-            return back()->with('mssg', ['type' => 'error', 'icon' => 'check', 'message' => 'Record Not Added Successfully']);
-        }
-    }
+                return back()->with('error', $e->getMessage());
 
-    public function getBatchList(Request $request)
-    {
-        $request->validate([
-            'id' => 'required',
-        ]);
-        if ($request->ajax()) {
-            $data = Batch::all();
-            // dd($data);
-            // dd($data);
-
-            return Datatables::of($data)
-                ->addIndexColumn()
-                ->addColumn('active', function ($row) {
-                    if ($row->active == 'Yes') {
-                        $active = '<span class="btn btn-primary btn-sm">Yes</span>';
-                    } else {
-                        $active = '<span class="btn btn-danger btn-sm">No</span>';
-                    }
-                    return $active;
-                })
-                ->addColumn('action', function ($row) {
-                    $btn = '<a href="' . Url::signedRoute("admin.getUniversityEdit", ['id' => $row->id]) . '"  class="btn btn-primary btn-icon btn-sm" data-toggle="tooltip" data-placement="top" title="View/Edit"><i data-lucide="pencil"></i></a>';
-                    // $btn = '<a href="' . Url::signedRoute("admin.acceptStudent", ['id' => $row->id]) . '" class="btn btn-danger btn-icon" data-toggle="tooltip" data-placement="top" title="Accept"><i data-lucide="edit"></i></a>';
-                    return $btn;
-                })
-
-                ->rawColumns(['active', 'action'])
-                ->make(true);
+            return back()->with('error', 'Charges Not Updated');
         }
     }
 }

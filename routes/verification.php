@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Verification\DashboardController;
 use App\Http\Controllers\Verification\LoginController;
+use App\Http\Controllers\Verification\PaymentController;
 use App\Http\Controllers\Verification\ProfileController;
 use \App\Http\Controllers\Verification\RegisterController;
 use App\Http\Controllers\Verification\VerifyController;
@@ -26,9 +27,17 @@ Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->name('s
 
 Route::get('/profile', [ProfileController::class, 'showProfile'])->name('showProfile');
 Route::post('/profile-save', [ProfileController::class, 'saveProfile'])->name('saveProfile');
+
+//verify
 Route::get('/verify', [VerifyController::class, 'showVerify'])->name('showVerify');
+Route::post('/search-certificate', [VerifyController::class, 'searchCertificateNo'])->name('searchCertificateNo');
+Route::post('/display-certificate', [VerifyController::class, 'displayCertificateNo'])->name('displayCertificateNo');
 
 
+//Invoice
+Route::post('/get-invoicelist', [PaymentController::class, 'getInvoiceList'])->name('getInvoiceList');
+Route::post('/generate-invoice', [PaymentController::class, 'generateInvoice'])->name('generateInvoice');
+Route::get('download-certificate/{id}', [VerifyController::class, 'downloadCertificate'])->name('downloadCertificate');
 
 // //change password
 // Route::get('/change-password', [LoginController::class, 'showChangePassword'])->name('showChangePassword');

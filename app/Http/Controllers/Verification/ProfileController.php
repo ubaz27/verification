@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('auth:verification');
+    }
     public function showProfile()
     {
 

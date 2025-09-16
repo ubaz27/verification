@@ -14,7 +14,7 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('fullname');
             $table->string('organization')->nullable();
             $table->unsignedBigInteger('programme_id');
@@ -23,6 +23,7 @@ class CreateStudentsTable extends Migration
             $table->string('location')->nullable();
             $table->string('file_no')->unique();
             $table->string('certificate_no')->unique();
+            $table->string('regno')->unique()->nullable();
             $table->boolean('isBlocked')->default(false);
             $table->softDeletes();
             $table->timestamps();
