@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-            <img src="{{ asset('assets/images/logo.png') }}" style="width:60px;height:50px;" alt="">
+            <img src="{{ asset('img/my-logo-3.jpg') }}" style="width:60px;height:50px;" alt="">
         </a>
 
         <div class="sidebar-toggler not-active">

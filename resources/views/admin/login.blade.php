@@ -20,7 +20,7 @@
                         <div class="col-md-4 pe-md-0 sm-hide" style="">
                             <div class="auth-side-wrapper">
                                 <center>
-                                    <img src="{{ asset('assets/images/logo.png') }}"
+                                    <img src="{{ asset('img/my-logo-3.jpg') }}"
                                         style="margin-top:40%; width: 50%;height: 150%;object-fit: contain;" alt="">
                                 </center>
 
